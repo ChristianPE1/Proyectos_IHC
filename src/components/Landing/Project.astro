@@ -1,0 +1,62 @@
+---
+// Recibe las propiedades como props
+const {
+   imgSrc,
+   imgAlt,
+   category,
+   title,
+   subtitle,
+   description,
+   linkHref,
+   linkText,
+} = Astro.props;
+---
+
+<!--<section class="h-[700px] bg-white flex justify-center items-center">
+   <main class="h-2/3 w-4/5 flex flex-row">
+      <div class="w-1/2 h-full">
+         <img src="pintar.webp" alt="Logo Paint VR" class="max-h-full m-auto" />
+      </div>
+      <div class="w-1/2 flex flex-col ml-5 my-10 justify-center gap-8">
+         <strong class="text-cyan-300">VIDEOJUEGO</strong>
+         <h1 class="font-bold text-3xl">
+            <strong class="text-cyan-500">Paint VR</strong> - Vive la Realidad Virtual
+            <strong class="text-blue-500">Pintando</strong>
+         </h1>
+         <p class="text-base text-gray-700">
+            Paint VR es un juego de realidad virtual que permite a los usuarios
+            experimentar el arte de la pintura en un entorno VR. A través de
+            este juego, los jugadores pueden intentar recrear con precisión
+            obras maestras o cuadros originales. El objetivo es lograr una
+            réplica lo más real posible y superar cada reto artístico, brindando
+            una experiencia inmersiva y satisfactoria para los amantes de la
+            pintura.
+         </p>
+         <a
+            href="#"
+            class="bg-cyan-500 w-fit py-2 px-5 rounded-full font-bold text-white hover:bg-cyan-600 duration-300"
+            >Descubre Paint VR</a
+         >
+      </div>
+   </main>
+</section>-->
+<section class="h-[700px] bg-white flex justify-center items-center">
+   <main class="h-2/3 w-4/5 flex flex-row">
+      <div class="w-1/2 h-full">
+         <img src={imgSrc} alt={imgAlt} class="max-h-full m-auto" />
+      </div>
+      <div class="w-1/2 flex flex-col mx-5 my-10 justify-center gap-8">
+         <strong class="text-cyan-300">{category}</strong>
+         <h1 class="font-bold text-3xl">
+            <strong class="text-cyan-500">{title}</strong> - {subtitle}
+         </h1>
+         <p class="text-base text-gray-700">{description}</p>
+         <a
+            href={linkHref}
+            class="bg-cyan-500 w-fit py-2 px-5 rounded-full font-bold text-white hover:bg-cyan-600 duration-300"
+         >
+            {linkText}
+         </a>
+      </div>
+   </main>
+</section>

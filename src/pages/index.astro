@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/Landing/HeroSection.astro";
+import Team from "../components/Landing/Team.astro";
+import Project from "../components/Landing/Project.astro";
+---
+
+<Layout title="Web IHC">
+	<HeroSection />
+	<Team />
+	<Project
+		imgSrc="pintar.webp"
+		imgAlt="Logo Paint VR"
+		category="VIDEOJUEGO"
+		title="Paint VR"
+		subtitle="Vive la Realidad Virtual pintando"
+		description={`Paint VR es un juego de realidad virtual que permite a los usuarios 
+    experimentar el arte de la pintura en un entorno VR. A través de este juego, los jugadores 
+    pueden intentar recrear con precisión obras maestras o cuadros originales. El objetivo 
+    es lograr una réplica lo más real posible y superar cada reto artístico, brindando 
+    una experiencia inmersiva y satisfactoria para los amantes de la pintura.`}
+		linkHref="#"
+		linkText="Explora Paint VE"
+	/>
+	<Project
+		imgSrc="project_logo.png"
+		imgAlt="Logo Relax Space"
+		category="Proyecto"
+		title="Relax Space"
+		subtitle="Desconectate del mundo explorando"
+		description={`Relax Space es un juego diseñado para estudiantes universitarios que buscan un escape del estrés académico. Sumérgete en un espacio virtual de serenidad mientras cuidas un huerto de plantas medicinales como la valeriana y la hierbaluisa. Relájate, disfruta de tareas simples y observa cómo crecen tus plantas mientras reduces la tensión y recargas tu energía mental. Con Relax Garden, lograrás una pausa sin presión, perfecta para recuperar la tranquilidad que necesitas..`}
+		linkHref="#"
+		linkText="Explorar Proyecto"
+	/>
+</Layout>

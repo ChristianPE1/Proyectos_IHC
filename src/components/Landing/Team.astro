@@ -1,0 +1,55 @@
+---
+import Percentage from "./Percentage.astro";
+---
+
+<section
+   class="h-[1200px] lg:h-[800px] flex justify-center gap-5 lg:gap-0 items-center flex-row lg:flex-col"
+>
+   <main
+      class="flex flex-col lg:justify-evenly lg:flex-row lg:w-4/5 h-[750px] lg:h-64 rounded-3xl shadow-lg shadow-slate-600 border-black"
+   >
+      <div
+         class="rounded-3xl h-full w-56 hover:bg-gradient-to-r hover:from-sky-500 hover:to-indigo-500 hover:text-white duration-1000"
+      >
+         <header class="flex items-center justify-center">
+            <img src="orange.png" alt="Hero" class="absolute w-20 lg:w-auto" />
+            <h1 class="text-3xl absolute font-bold">01</h1>
+         </header>
+         <div class="flex h-full flex-col justify-center items-center">
+            <img src="skyblue.png" alt="Hero" class="w-28" />
+            <h2 class="text-2xl font-bold">Saul Condori</h2>
+         </div>
+      </div>
+      <div
+         class="rounded-3xl h-full w-56 hover:bg-gradient-to-r hover:from-sky-500 hover:text-white hover:to-indigo-500 duration-1000"
+      >
+         <header class="flex items-center justify-center">
+            <img src="skyblue.png" alt="Hero" class="absolute w-20 lg:w-auto" />
+            <h1 class="text-3xl absolute font-bold">02</h1>
+         </header>
+         <div class="flex h-full flex-col justify-center items-center">
+            <img src="skyblue.png" alt="Hero" class="w-28" />
+            <h2 class="text-2xl font-bold">Saul Condori</h2>
+         </div>
+      </div>
+      <div
+         class="rounded-3xl h-full w-56 hover:bg-gradient-to-r hover:from-sky-500 hover:text-white hover:to-indigo-500 duration-1000"
+      >
+         <header class="flex items-center justify-center">
+            <img src="blue.png" alt="Hero" class="absolute w-20 lg:w-auto" />
+            <h1 class="text-3xl absolute font-bold">03</h1>
+         </header>
+         <div class="flex h-full flex-col justify-center items-center">
+            <img src="skyblue.png" alt="Hero" class="w-28" />
+            <h2 class="text-2xl font-bold">Saul Condori</h2>
+         </div>
+      </div>
+   </main>
+   <footer
+      class="h-[750px] lg:h-64 flex flex-col lg:flex-row items-center justify-evenly lg:w-4/5 gap-4"
+   >
+      <Percentage progress="40" />
+      <Percentage progress="30" />
+      <Percentage progress="30" />
+   </footer>
+</section>
