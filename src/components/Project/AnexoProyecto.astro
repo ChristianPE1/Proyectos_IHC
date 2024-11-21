@@ -1,36 +1,38 @@
 ---
 const links = [
   {
-    icon: "encuesta.png", // Reemplaza con tu ícono
+    icon: "/anexo_project/encuesta.png", // Reemplaza con tu ícono
     title: "ENCUESTA",
-    description:
-      "Encuesta realizada a los usuarios y resultados obtenidos",
+    description: "Encuesta realizada a los usuarios y resultados obtenidos",
     buttonText: "VER FORMULARIO",
     buttonLink: "https://forms.gle/YuucXE5cHW3rJVrx9",
     buttonText2: "VER RESULTADOS",
-    buttonLink2: "https://docs.google.com/spreadsheets/d/1HdK6PZsAzGnUPeJvaLzxFcH_7UaE6RgCjptwSFXUoHY/edit?usp=sharing",  // Añade el enlace correspondiente
+    buttonLink2:
+      "https://docs.google.com/spreadsheets/d/1HdK6PZsAzGnUPeJvaLzxFcH_7UaE6RgCjptwSFXUoHY/edit?usp=sharing", // Añade el enlace correspondiente
   },
   {
-    icon: "buscando.jpg", // Reemplaza con tu ícono
+    icon: "/anexo_project/buscando.jpg", // Reemplaza con tu ícono
     title: "BUSCANDO NECESIDADES",
-    description:
-      "Entrevista a los usuarios",
+    description: "Entrevista a los usuarios",
 
     buttonText: "IR A LOS VIDEOS",
-    buttonLink: "https://www.youtube.com/playlist?list=PLCFYbu8kDdyimfYAzMtgsMOYnkGxSUFKy", // Añade el enlace correspondiente
+    buttonLink:
+      "https://www.youtube.com/playlist?list=PLCFYbu8kDdyimfYAzMtgsMOYnkGxSUFKy", // Añade el enlace correspondiente
 
     buttonText2: "VER DOCUMENTO",
-    buttonLink2: "https://drive.google.com/file/d/1y2-_Tb3ETuDHw8FLvXxGSaBz6u-RY0qg/view?usp=sharing", 
+    buttonLink2:
+      "https://drive.google.com/file/d/1y2-_Tb3ETuDHw8FLvXxGSaBz6u-RY0qg/view?usp=sharing",
   },
   {
-    icon: "storyboard.jpg", // Reemplaza con tu ícono
+    icon: "/anexo_project/storyboard.jpg", // Reemplaza con tu ícono
     title: "STORYBOARD",
-    description:
-      "Derrollo proyecto",
+    description: "Derrollo proyecto",
     buttonText: "IR A LOS VIDEOS",
-    buttonLink: "https://www.youtube.com/playlist?list=PLCFYbu8kDdyhs5_4TUGtFUlDFCJe1KPzd",
+    buttonLink:
+      "https://www.youtube.com/playlist?list=PLCFYbu8kDdyhs5_4TUGtFUlDFCJe1KPzd",
     buttonText2: "VER DOCUMENTO",
-    buttonLink2: "https://drive.google.com/file/d/1eWQZKh02goFiyDQtBK8-MQBRZKG0s8qS/view?usp=sharing", // Añade el enlace correspondiente
+    buttonLink2:
+      "https://drive.google.com/file/d/1eWQZKh02goFiyDQtBK8-MQBRZKG0s8qS/view?usp=sharing", // Añade el enlace correspondiente
   },
 ];
 ---
@@ -38,16 +40,22 @@ const links = [
 <section class="links-directos">
   <h2>ANEXO PROYECTO</h2>
   <div class="links-container">
-    {links.map((link) => (
-      <div class="link-card">
-        <img src={link.icon} alt={`Ícono de ${link.title}`} />
-        <h3>{link.title}</h3>
-        <p>{link.description}</p>
-        <a href={link.buttonLink} class="btn">{link.buttonText}</a>
-        
-        <a href={link.buttonLink2} class="btn">{link.buttonText2}</a>
-      </div>
-    ))}
+    {
+      links.map((link) => (
+        <div class="link-card">
+          <img src={link.icon} alt={`Ícono de ${link.title}`} />
+          <h3>{link.title}</h3>
+          <p>{link.description}</p>
+          <a href={link.buttonLink} class="btn">
+            {link.buttonText}
+          </a>
+
+          <a href={link.buttonLink2} class="btn">
+            {link.buttonText2}
+          </a>
+        </div>
+      ))
+    }
   </div>
 </section>
 
@@ -60,56 +68,56 @@ const links = [
   }
 
   .links-container {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
 
-.link-card {
-  background: #00b0d7;
-  border-radius: 8px;
-  padding: 1.5rem;
-  width: 250px;
-  min-height: 400px; /* Altura mínima para las tarjetas */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  gap: 1rem;
-}
+  .link-card {
+    background: #00b0d7;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 250px;
+    min-height: 400px; /* Altura mínima para las tarjetas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    gap: 1rem;
+  }
 
-.link-card p {
-  font-size: 0.9rem;
-  margin-bottom: auto; /* Empuja el contenido hacia arriba */
-}
+  .link-card p {
+    font-size: 0.9rem;
+    margin-bottom: auto; /* Empuja el contenido hacia arriba */
+  }
 
-.button-container {
-  margin-top: auto; /* Empuja los botones al fondo de la tarjeta */
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem; /* Espaciado entre botones */
-  width: 100%; /* Asegura que ocupen todo el ancho */
-}
+  .button-container {
+    margin-top: auto; /* Empuja los botones al fondo de la tarjeta */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Espaciado entre botones */
+    width: 100%; /* Asegura que ocupen todo el ancho */
+  }
 
-.btn {
-  background: #ffa94d;
-  color: #111;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-weight: bold;
-  text-align: center;
-  box-sizing: border-box;
-  width: 100%;
-}
+  .btn {
+    background: #ffa94d;
+    color: #111;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
 
-.btn:hover {
-  background: #ff8000;
-}
+  .btn:hover {
+    background: #ff8000;
+  }
 
   .link-card img {
     width: 120px; /* Tamaño más grande de la imagen */
