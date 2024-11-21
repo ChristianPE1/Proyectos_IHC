@@ -38,7 +38,9 @@ const links = [
 ---
 
 <section class="links-directos">
-  <h2>ANEXO PROYECTO</h2>
+  <h1 class="font-bold text-4xl text-center">
+    <strong class="text-cyan-500">Anexos</strong>
+  </h1>
   <div class="links-container">
     {
       links.map((link) => (
@@ -46,11 +48,11 @@ const links = [
           <img src={link.icon} alt={`Ícono de ${link.title}`} />
           <h3>{link.title}</h3>
           <p>{link.description}</p>
-          <a href={link.buttonLink} class="btn">
+          <a href={link.buttonLink} class="btn" target="_blank">
             {link.buttonText}
           </a>
 
-          <a href={link.buttonLink2} class="btn">
+          <a href={link.buttonLink2} class="btn" target="_blank">
             {link.buttonText2}
           </a>
         </div>
