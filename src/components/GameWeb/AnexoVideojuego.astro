@@ -11,7 +11,7 @@ const links = [
   {
     icon: "/anexo_juego/VR.png", // Reemplaza con tu ícono
     title: "EVALUACION CON USUARIOS",
-    description: "Boceto Inicial",
+    description: "Pruebas y Feedback con los usuarios",
 
     buttonText: "IR A LOS VIDEOS",
     buttonLink:
@@ -25,18 +25,20 @@ const links = [
     <strong class="text-cyan-500">Anexos</strong>
   </h1>
   <div class="links-container">
-    {
-      links.map((link) => (
-        <div class="link-card">
-          <img src={link.icon} alt={`Ícono de ${link.title}`} />
-          <h3 class="text-3xl font-bold">{link.title}</h3>
-          <p>{link.description}</p>
+    {links.map((link) => (
+      <div class="link-card">
+        <div class="colored-section"></div> {/* Sección de color adicional */}
+        <img src={link.icon} alt={`Ícono de ${link.title}`} />
+        <h3><strong>{link.title}</strong></h3>
+        <p>{link.description}</p>
+
+        <div class="button-container">
           <a href={link.buttonLink} class="btn" target="_blank">
             {link.buttonText}
           </a>
         </div>
-      ))
-    }
+      </div>
+    ))}
   </div>
 </section>
 
@@ -56,57 +58,49 @@ const links = [
   }
 
   .link-card {
-    background: #00b0d7;
+    position: relative; /* Necesario para el uso de secciones absolutas */
+    background: #ffffff;
     border-radius: 8px;
     padding: 1.5rem;
     width: 250px;
-    min-height: 400px; /* Altura mínima para las tarjetas */
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     border: 1px solid #ddd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: #fff;
+    color: #000000;
     gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .link-card p {
-    font-size: 0.9rem;
-    margin-bottom: auto; /* Empuja el contenido hacia arriba */
+  .link-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
 
-  .button-container {
-    margin-top: auto; /* Empuja los botones al fondo de la tarjeta */
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem; /* Espaciado entre botones */
-    width: 100%; /* Asegura que ocupen todo el ancho */
-  }
-
-  .btn {
-    background: #ffa94d;
-    color: #111;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-weight: bold;
-    text-align: center;
-    box-sizing: border-box;
+  .colored-section {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-  }
-
-  .btn:hover {
-    background: #ff8000;
+    height: 100px; /* Ajusta el tamaño de la sección de color */
+    background: linear-gradient(135deg, #2dd4bf, #ffffd1); /* Cambia por el color que prefieras */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    z-index: 1;
   }
 
   .link-card img {
-    width: 120px; /* Tamaño más grande de la imagen */
+    position: relative;
+    z-index: 2; /* Para que el contenido esté por encima de la sección de color */
+    width: 120px;
     height: 120px;
-    object-fit: cover; /* Ajusta la imagen al tamaño definido */
-    margin: 0 auto 1rem auto; /* Centra la imagen */
-    display: block; /* Asegura que esté centrada en el contenedor */
-    border-radius: 50%; /* Si deseas que sea redonda */
+    object-fit: cover;
+    margin: 1rem auto 1rem auto;
+    display: block;
+    border-radius: 50%;
   }
 
   .link-card h3 {
@@ -120,16 +114,27 @@ const links = [
     margin-bottom: 1.5rem;
   }
 
+  .button-container {
+    margin-top: auto; /* Empuja los botones al fondo de la tarjeta */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Espaciado entre botones */
+    width: 100%;
+  }
+
   .btn {
-    background: #ffa94d;
+    background: #85e3ff;
     color: #111;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
   }
 
   .btn:hover {
-    background: #ff8000;
+    background: #6eb5ff;
   }
 </style>
