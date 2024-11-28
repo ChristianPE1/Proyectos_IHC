@@ -12,8 +12,10 @@ const {
 } = Astro.props;
 ---
 
-<section class="h-[700px] flex justify-center items-center">
-   <main class="h-2/3 w-4/5 flex flex-row">
+<section class="h-[1100px] md:h-[700px] flex justify-center items-center">
+   <main
+      class="h-2/3 w-full md:w-4/5 flex flex-col-reverse md:flex-row md:justify-normal justify-center items-center"
+   >
       <div class="w-1/2 h-full">
          <img src={imgSrc} alt={imgAlt} class="max-h-full m-auto" />
       </div>

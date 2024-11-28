@@ -3,21 +3,28 @@ import Percentage from "./Percentage.astro";
 ---
 
 <section
-   class="h-[1200px] lg:h-[800px] flex justify-center gap-5 lg:gap-0 items-center flex-row lg:flex-col"
+   class="h-[1200px] lg:h-[800px] flex justify-center gap-5 lg:gap-0 items-center flex-col mt-10"
 >
+   <h1 class="font-bold text-3xl">Equipo</h1>
    <main
-      class="flex flex-col lg:justify-evenly lg:flex-row lg:w-4/5 h-[750px] lg:h-64 rounded-3xl shadow-lg shadow-slate-600 border-black"
+      class="flex flex-col lg:justify-evenly md:flex-row lg:w-4/5 h-[2050px] lg:h-[550px] rounded-3xl shadow-lg shadow-slate-600 border-black mt-20 md:gap-0 gap-10"
    >
       <div
          class="rounded-3xl h-full w-56 hover:bg-gradient-to-r hover:from-sky-500 hover:to-indigo-500 hover:text-white duration-500"
       >
          <header class="flex items-center justify-center">
-            <img src="orange.png" alt="Hero" class="absolute w-20 lg:w-auto" />
+            <img src="orange.png" alt="Hero" class="absolute w-32 lg:w-auto" />
             <h1 class="text-3xl absolute font-bold">01</h1>
          </header>
-         <div class="flex h-full flex-col justify-center items-center gap-2">
-            <img src="profile/saul_img.png" alt="Hero" class="w-20" />
-            <h2 class="text-2xl font-bold">Saul Condori</h2>
+         <div class="flex h-full flex-col justify-center items-center gap-6">
+            <div>
+               <img src="profile/saul_img.png" alt="Hero" class="w-32 m-auto" />
+               <h2 class="text-xl font-bold mt-2">Saul Condori</h2>
+            </div>
+            <div class="flex items-center flex-col">
+               <Percentage progress="33" />
+               <h2 class="text-xl">Aporte</h2>
+            </div>
          </div>
       </div>
       <div
@@ -27,9 +34,19 @@ import Percentage from "./Percentage.astro";
             <img src="skyblue.png" alt="Hero" class="absolute w-20 lg:w-auto" />
             <h1 class="text-3xl absolute font-bold">02</h1>
          </header>
-         <div class="flex h-full flex-col justify-center items-center gap-2">
-            <img src="profile/christian_img.png" alt="Hero" class="w-20" />
-            <h2 class="text-2xl font-bold">Christian Pardavé</h2>
+         <div class="flex h-full flex-col justify-center items-center gap-6">
+            <div>
+               <img
+                  src="profile/christian_img.png"
+                  alt="Hero"
+                  class="w-32 m-auto"
+               />
+               <h2 class="text-xl font-bold mt-2">Christian Pardavé</h2>
+            </div>
+            <div class="flex items-center flex-col">
+               <Percentage progress="33" />
+               <h2 class="text-xl">Aporte</h2>
+            </div>
          </div>
       </div>
       <div
@@ -39,13 +56,23 @@ import Percentage from "./Percentage.astro";
             <img src="blue.png" alt="Hero" class="absolute w-20 lg:w-auto" />
             <h1 class="text-3xl absolute font-bold">03</h1>
          </header>
-         <div class="flex h-full flex-col justify-center items-center gap-2">
-            <img src="profile/sergio_img.png" alt="Hero" class="w-20" />
-            <h2 class="text-2xl font-bold">Sergio Mena</h2>
+         <div class="flex h-full flex-col justify-center items-center gap-6">
+            <div>
+               <img
+                  src="profile/sergio_img.png"
+                  alt="Hero"
+                  class="w-32 m-auto"
+               />
+               <h2 class="text-xl font-bold mt-2">Sergio Mena</h2>
+            </div>
+            <div class="flex items-center flex-col">
+               <Percentage progress="33" />
+               <h2 class="text-xl">Aporte</h2>
+            </div>
          </div>
       </div>
    </main>
-   <footer
+   <!--<footer
       class="h-[750px] lg:h-64 flex flex-col lg:flex-row items-center justify-evenly lg:w-4/5 gap-4"
    >
       <div class="flex items-center flex-col">
@@ -60,5 +87,5 @@ import Percentage from "./Percentage.astro";
          <Percentage progress="33" />
          <h2>Aporte</h2>
       </div>
-   </footer>
+   </footer>-->
 </section>
