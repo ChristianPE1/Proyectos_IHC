@@ -1,0 +1,130 @@
+<style>
+    .slider {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      width: 90%;
+      height: 400px;
+      margin: 0 auto;
+    }
+  
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+  
+    .slider-image {
+      flex-shrink: 0;
+      position: relative;
+      transition: opacity 0.5s ease;
+    }
+  
+    .fade-left,
+    .fade-right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 10%;
+      pointer-events: none;
+      z-index: 1;
+    }
+  
+    .fade-left {
+      left: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    }
+  
+    .fade-right {
+      right: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    }
+  
+    .button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+  
+    .button-left {
+      left: 10px;
+    }
+  
+    .button-right {
+      right: 10px;
+    }
+  </style>
+  
+  <div class="slider">
+    <button class="button button-left" id="scrollLeft">&lt;</button>
+    <div class="fade-left"></div>
+  
+    <div class="slider-track" id="sliderTrack">
+      <img src="/public/game_timeline/SegundoPrototipo.png" class="slider-image" alt="Slider Image" />
+      <img src="/public/game_timeline/SegundoPrototipo.png" class="slider-image" alt="Slider Image" />
+      <img src="/public/game_timeline/SegundoPrototipo.png" class="slider-image" alt="Slider Image" />
+      <img src="/public/game_timeline/SegundoPrototipo.png" class="slider-image" alt="Slider Image" />
+      <img src="/public/game_timeline/SegundoPrototipo.png" class="slider-image" alt="Slider Image" />
+    </div>
+  
+    <div class="fade-right"></div>
+    <button class="button button-right" id="scrollRight">&gt;</button>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const visibleImages = 3;
+      const imageWidth = 100 / visibleImages;
+      const sliderTrack = document.getElementById('sliderTrack');
+      const images = Array.from(sliderTrack.children);
+      let currentIndex = 0;
+  
+      // Clone images for infinite scrolling
+      images.forEach((image) => {
+        const cloneBefore = image.cloneNode(true);
+        const cloneAfter = image.cloneNode(true);
+        sliderTrack.insertBefore(cloneBefore, sliderTrack.firstChild);
+        sliderTrack.appendChild(cloneAfter);
+      });
+  
+      const totalImages = sliderTrack.children.length;
+      const startPosition = images.length;
+      currentIndex = startPosition;
+  
+      const updateSlider = () => {
+        sliderTrack.style.transform = `translateX(-${currentIndex * imageWidth}%)`;
+      };
+  
+      const scroll = (direction) => {
+        currentIndex += direction;
+        if (currentIndex < 0) {
+          currentIndex = startPosition - 1;
+          sliderTrack.style.transition = 'none';
+          updateSlider();
+          requestAnimationFrame(() => {
+            sliderTrack.style.transition = 'transform 0.5s ease';
+          });
+        } else if (currentIndex >= totalImages - images.length) {
+          currentIndex = startPosition;
+          sliderTrack.style.transition = 'none';
+          updateSlider();
+          requestAnimationFrame(() => {
+            sliderTrack.style.transition = 'transform 0.5s ease';
+          });
+        } else {
+          updateSlider();
+        }
+      };
+  
+      document.getElementById('scrollLeft').addEventListener('click', () => scroll(-1));
+      document.getElementById('scrollRight').addEventListener('click', () => scroll(1));
+  
+      updateSlider();
+    });
+  </script>
+  
