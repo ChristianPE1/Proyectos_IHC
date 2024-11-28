@@ -1,0 +1,68 @@
+.slider {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 90%; /* Ajusta este valor si necesitas más espacio */
+  height: 300px; /* Ajusta según la altura de las imágenes */
+  margin: 0 auto;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider-image {
+  flex-shrink: 0;
+  width: 33%; /* Asegura que 3 imágenes sean visibles al mismo tiempo */
+  padding: 0 5px; /* Espaciado entre imágenes */
+  box-sizing: border-box;
+}
+
+.fade-left,
+.fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fade-left {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.button-left {
+  left: 10px;
+}
+
+.button-right {
+  right: 10px;
+}

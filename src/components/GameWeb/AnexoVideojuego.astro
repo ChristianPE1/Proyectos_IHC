@@ -22,23 +22,26 @@ const links = [
 
 <section class="links-directos">
   <h1 class="font-bold text-4xl text-center">
-    <strong class="text-cyan-500">Anexos</strong>
+    <strong class="text-orange-500">Anexos</strong>
   </h1>
   <div class="links-container">
-    {links.map((link) => (
-      <div class="link-card">
-        <div class="colored-section"></div> {/* Sección de color adicional */}
-        <img src={link.icon} alt={`Ícono de ${link.title}`} />
-        <h3><strong>{link.title}</strong></h3>
-        <p>{link.description}</p>
-
-        <div class="button-container">
-          <a href={link.buttonLink} class="btn" target="_blank">
-            {link.buttonText}
-          </a>
+    {
+      links.map((link) => (
+        <div class="link-card">
+          <div class="colored-section" /> {/* Sección de color adicional */}
+          <img src={link.icon} alt={`Ícono de ${link.title}`} />
+          <h3>
+            <strong>{link.title}</strong>
+          </h3>
+          <p>{link.description}</p>
+          <div class="button-container">
+            <a href={link.buttonLink} class="btn" target="_blank">
+              {link.buttonText}
+            </a>
+          </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </section>
 
@@ -72,7 +75,9 @@ const links = [
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: #000000;
     gap: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .link-card:hover {
@@ -86,7 +91,11 @@ const links = [
     left: 0;
     width: 100%;
     height: 100px; /* Ajusta el tamaño de la sección de color */
-    background: linear-gradient(135deg, #2dd4bf, #ffffd1); /* Cambia por el color que prefieras */
+    background: linear-gradient(
+      135deg,
+      #2dd4bf,
+      #ffffd1
+    ); /* Cambia por el color que prefieras */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     z-index: 1;
@@ -123,7 +132,7 @@ const links = [
   }
 
   .btn {
-    background: #85e3ff;
+    background: #f97316;
     color: #111;
     text-decoration: none;
     padding: 0.5rem 1rem;
@@ -135,6 +144,6 @@ const links = [
   }
 
   .btn:hover {
-    background: #6eb5ff;
+    background: #b45309;
   }
 </style>

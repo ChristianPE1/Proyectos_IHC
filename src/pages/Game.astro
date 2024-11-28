@@ -6,13 +6,18 @@ import Layout from "../layouts/Layout.astro";
 import Tecnologias from "../components/GameWeb/Tecnologias.astro";
 import AnexoVideojuego from "../components/GameWeb/AnexoVideojuego.astro";
 import Slider from "../components/GameWeb/Slider.astro";
+import SliderReact from "../components/GameWeb/SliderReact.jsx";
 ---
 
 <Layout title="Acerca del Videojuego">
    <HeroSection />
    <Tecnologias />
    <TimeLine />
-   <Slider />
+   <h1 class="font-bold text-4xl text-center my-8">
+      <strong class="text-orange-500">Galeria</strong>
+   </h1>
+   <SliderReact client:load />
+   <SliderReact client:load />
    <AnexoVideojuego />
    <Footer />
 </Layout>
