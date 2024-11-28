@@ -9,10 +9,10 @@ const Slider = () => {
    const [isTransitioning, setIsTransitioning] = useState(false);
 
    const images = [
-      "/game_gallery/b1.png",
-      "/game_gallery/b2.png",
-      "/game_gallery/b3.png",
-      "/game_gallery/b4.png",
+      "/game_gallery/c1.png",
+      "/game_gallery/c2.png",
+      "/game_gallery/c3.png",
+      "/game_gallery/c4.png",
    ];
 
    const totalImages = images.length * 3; // Original + clones
